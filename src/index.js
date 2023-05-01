@@ -12,15 +12,13 @@ if no city found, error.
 */
 function processData(data) {
   const currentData = {
-    location: data.location.name,
-    region: data.location.region,
-    localTime: data.location.localtime,
+    location: `Location: ${data.location.name}, ${data.location.region}`,
     currentIcon: data.current.condition.icon, 
     currentCondition: data.current.condition.text,
-    temp: data.current.temp_f,
-    feelsLike: data.current.feelslike_f,
-    humidity: data.current.humidity,
-    updated: data.current.last_updated,
+    time: `Date/Time: ${data.location.localtime}`,
+    temp: `${data.current.temp_f}°F`,
+    humidity: `Humidity: ${data.current.humidity}`,
+    updated: `Last Updated: ${data.current.last_updated}`,
   }
   return currentData;
   // console.log(data);
