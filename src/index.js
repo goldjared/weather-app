@@ -1,7 +1,6 @@
 import "./style.css";
+import injectDisplay from "./display";
 
-console.log("jaredgfff");
-console.log("spyder");
 /*
 on page load, get weather info of user IP address.
 
@@ -12,7 +11,7 @@ search input for city, enter will get that city, and display it.
 if no city found, error.
 */
 function processData(data) {
-  return {
+  const currentData = {
     location: data.location.name,
     region: data.location.region,
     localTime: data.location.localtime,
@@ -23,6 +22,7 @@ function processData(data) {
     humidity: data.current.humidity,
     updated: data.current.last_updated,
   }
+  return currentData;
   // console.log(data);
 }
 
@@ -35,7 +35,7 @@ async function getWeather(city) {
       throw new Error(response.statusText);
     }
     const weatherData = await response.json();
-    processData(weatherData);
+    injectDisplay(processData(weatherData));
   } catch (e) {
     console.log(e);
   }
