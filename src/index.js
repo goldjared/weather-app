@@ -14,13 +14,13 @@ if no city found, error.
 
 async function getWeather(city) {
   try {
-    const weather = await fetch(
+    const response= await fetch(
       `https://api.weatherapi.com/v1/current.json?key=a3f0ed6f12f14ffcaf5221928232504&q=${city}&aqi=no`
     );
-    if(!weather.ok) {
+    if(!response.ok) {
       throw new Error(weather.statusText);
     }
-    const weatherData = await weather.json();
+    const weatherData = await response.json();
     console.log(weatherData);
   } catch (e) {
     console.log(e);
