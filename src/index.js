@@ -11,6 +11,20 @@ search input for city, enter will get that city, and display it.
 
 if no city found, error.
 */
+function processData(data) {
+  return {
+    location: data.location.name,
+    region: data.location.region,
+    localTime: data.location.localtime,
+    currentIcon: data.current.condition.icon, 
+    currentCondition: data.current.condition.text,
+    temp: data.current.temp_f,
+    feelsLike: data.current.feelslike_f,
+    humidity: data.current.humidity,
+    updated: data.current.last_updated,
+  }
+  // console.log(data);
+}
 
 async function getWeather(city) {
   try {
@@ -21,7 +35,7 @@ async function getWeather(city) {
       throw new Error(weather.statusText);
     }
     const weatherData = await response.json();
-    console.log(weatherData);
+    processData(weatherData);
   } catch (e) {
     console.log(e);
   }
