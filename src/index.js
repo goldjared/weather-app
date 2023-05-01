@@ -1,15 +1,6 @@
 import "./style.css";
 import injectDisplay from "./display";
 
-/*
-on page load, get weather info of user IP address.
-
-display it.
-
-search input for city, enter will get that city, and display it.
-
-if no city found, error.
-*/
 function processData(data) {
   const currentData = {
     location: `Location: ${data.location.name}, ${data.location.region}`,
@@ -21,7 +12,6 @@ function processData(data) {
     updated: `Last Updated: ${data.current.last_updated}`,
   }
   return currentData;
-  // console.log(data);
 }
 
 async function getWeather(city) {
@@ -45,7 +35,6 @@ async function getWeather(city) {
 
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(input.value);
     getWeather(input.value);
     input.value = '';
   });
