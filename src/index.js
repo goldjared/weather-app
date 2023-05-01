@@ -32,7 +32,7 @@ async function getWeather(city) {
       `https://api.weatherapi.com/v1/current.json?key=a3f0ed6f12f14ffcaf5221928232504&q=${city}&aqi=no`
     );
     if(!response.ok) {
-      throw new Error(weather.statusText);
+      throw new Error(response.statusText);
     }
     const weatherData = await response.json();
     processData(weatherData);
