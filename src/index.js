@@ -1,5 +1,4 @@
 import './style.css';
-import cityRequester from './input';
 
 console.log("jaredgfff");
 console.log("spyder");
@@ -12,7 +11,7 @@ search input for city, enter will get that city, and display it.
 
 if no city found, error.
 */
-cityRequester();
+
 
 async function getWeather(city) {
   const weather = await fetch(`https://api.weatherapi.com/v1/current.json?key=a3f0ed6f12f14ffcaf5221928232504&q=${city}&aqi=no`);
@@ -20,4 +19,13 @@ async function getWeather(city) {
   return console.log(weatherData);
 }
 
-getWeather('miami');
+(function cityRequester() {
+  const input = document.getElementById('search');
+  const submit = document.getElementById('submit');
+
+  submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(input.value);
+    getWeather(input.value);
+  })
+}())
