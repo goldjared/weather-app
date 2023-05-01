@@ -16,7 +16,7 @@ function processData(data) {
     currentIcon: data.current.condition.icon, 
     currentCondition: data.current.condition.text,
     time: `Date/Time: ${data.location.localtime}`,
-    temp: `${data.current.temp_f}°F`,
+    temp: `Temperature: ${data.current.temp_f}°F`,
     humidity: `Humidity: ${data.current.humidity}`,
     updated: `Last Updated: ${data.current.last_updated}`,
   }
