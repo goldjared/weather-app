@@ -56,4 +56,6 @@ table {
   background-color: rgb(73, 73, 73);
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  color: red;
 }

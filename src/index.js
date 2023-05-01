@@ -25,7 +25,7 @@ async function getWeather(city) {
     const weatherData = await response.json();
     injectDisplay(processData(weatherData));
   } catch (e) {
-    console.log(e);
+    alert(e);
   }
 }
 
