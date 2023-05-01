@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   plugins: [
     new HtmlWebpackPlugin({
       title: "Weather App",
-      template: './src/index.html',
+      template: "./src/index.html",
     }),
   ],
   output: {
@@ -19,11 +19,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
