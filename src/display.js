@@ -1,6 +1,11 @@
 export default function injectDisplay(data) {
   const newData = Object.keys(data);
   const container = document.getElementById('container');
+  (function clearDisplay() {
+    while(container.lastElementChild) {
+      container.removeChild(container.lastElementChild);
+    }
+  }());
   newData.forEach((item) => {
     if(item === 'currentIcon') {
       const icon = document.createElement('img');
@@ -14,3 +19,4 @@ export default function injectDisplay(data) {
     container.append(entry);
   })
 }
+
