@@ -2,3 +2,9 @@
   background-color: black;
   color: yellow;
 }
+
+#container {
+  background-color: rgb(73, 73, 73);
+  display: flex;
+  flex-wrap: wrap;
+}
