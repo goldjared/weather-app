@@ -47,5 +47,6 @@ async function getWeather(city) {
     e.preventDefault();
     console.log(input.value);
     getWeather(input.value);
+    input.value = '';
   });
 })();
